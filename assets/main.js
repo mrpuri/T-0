@@ -25,7 +25,7 @@ document.querySelectorAll("[data-email]").forEach((el) => {
 const LAYERS = [
   { id: "bank", name: "Bank & institutional systems", tag: "YOUR ESTATE · KEEPS RUNNING", color: "var(--bank)",
     items: ["Core banking & ledger", "Payments · ISO 20022", "Treasury & liquidity", "Custody & fund admin", "Risk, KYC & AML", "Regulatory reporting"] },
-  { id: "t0", name: "T+0 orchestration", tag: "MAPS ELEMENTS & SERVICES ACROSS BOTH WORLDS", color: "var(--gold-bright)",
+  { id: "t0", name: "T+0 orchestration", tag: "MAPS ELEMENTS & SERVICES ACROSS BOTH WORLDS", color: "var(--accent-bright)",
     items: ["Tokenization strategy", "Regulatory design", "Architecture & platform", "Systems integration", "Delivery to production", "Managed operations"] },
   { id: "dig", name: "Digital asset markets", tag: "THE NEW FINANCIAL WORLD", color: "var(--digital)",
     items: ["Tokenized funds & MMFs", "Treasuries & bonds", "Private credit & RWAs", "Stablecoins & deposit tokens", "Tokenized collateral", "Digital venues & custody"] },
@@ -84,8 +84,7 @@ const LAYERS = [
       const l = P(cy, 0.348, 0.826), r = P(cy, 0.826, 0.348);
       return `<line class="t0-link" x1="${x}" y1="${y}" x2="${l[0]}" y2="${l[1]}"/><line class="t0-link" x1="${x}" y1="${y}" x2="${r[0]}" y2="${r[1]}"/>
         <ellipse class="t0-ring" cx="${x}" cy="${y}" rx="64" ry="32"><animate attributeName="rx" values="54;74;54" dur="2.4s" repeatCount="indefinite"/><animate attributeName="ry" values="27;37;27" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;.25;.9" dur="2.4s" repeatCount="indefinite"/></ellipse>
-        <ellipse class="t0-core" cx="${x}" cy="${y}" rx="44" ry="22"/>
-        <text class="t0-mark" transform="matrix(1 0.5 -1 0.5 ${x} ${y})" text-anchor="middle" dy="7">T+0</text>`;
+        <g class="t0-logo" transform="matrix(1 0.5 -1 0.5 ${x} ${y}) scale(0.075) translate(-958 -478)"><rect class="line" x="42" y="457" width="1830" height="42"/><circle class="ring" cx="872" cy="478" r="382.5" stroke-width="117"/><circle class="dot" cx="1872" cy="478" r="74"/></g>`;
     },
     dig: (cy) => coinStack(cy, 0.16, 0.6, 3) + coinStack(cy, 0.62, 0.16, 4) + coinStack(cy, 0.95, 0.7, 2),
     chain: (cy) => {
