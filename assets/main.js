@@ -23,14 +23,14 @@ document.querySelectorAll("[data-email]").forEach((el) => {
 // Isometric exploded stack: bank systems on top, T+0 in between, digital markets below,
 // blockchain as the foundation. Coins (cash leg) fall, tokens (asset leg) rise, blocks settle on-chain.
 const LAYERS = [
-  { id: "bank", name: "Bank & institutional systems", tag: "YOUR ESTATE · KEEPS RUNNING", color: "var(--bank)",
-    items: ["Core banking & ledger", "Payments · ISO 20022", "Treasury & liquidity", "Custody & fund admin", "Risk, KYC & AML", "Regulatory reporting"] },
-  { id: "t0", name: "T+0 orchestration", tag: "MAPS ELEMENTS & SERVICES ACROSS BOTH WORLDS", color: "var(--accent-bright)",
-    items: ["Tokenization strategy", "Regulatory design", "Architecture & platform", "Systems integration", "Delivery to production", "Managed operations"] },
-  { id: "dig", name: "Digital asset markets", tag: "THE NEW FINANCIAL WORLD", color: "var(--digital)",
-    items: ["Tokenized funds & MMFs", "Treasuries & bonds", "Private credit & RWAs", "Stablecoins & deposit tokens", "Tokenized collateral", "Digital venues & custody"] },
-  { id: "chain", name: "Blockchain infrastructure", tag: "SETTLEMENT FOUNDATION", color: "var(--chain)",
-    items: ["Public chains & L2s", "Permissioned networks", "ERC-3643 · ERC-20", "Smart contracts · DvP", "On-chain identity", "MPC wallets · oracles"] },
+  { id: "bank", name: "Institutions we advise", tag: "PAYMENTS · FUNDS · BANKS · TREASURY", color: "var(--bank)",
+    items: ["Payment firms & issuers", "Banks & reserve custodians", "MMF & ETF sponsors", "Gulf banks & exchanges", "Corporate treasurers", "Digital-asset platforms"] },
+  { id: "t0", name: "T+0 advisory", tag: "THREE PRACTICES · ONE INDEPENDENT FIRM", color: "var(--accent-bright)",
+    items: ["Stablecoins", "Tokenized financial products", "On-chain treasury & finance ops", "Readiness reviews", "Launch programmes", "GTM & capability centres"] },
+  { id: "dig", name: "On-chain products", tag: "WHAT MOVES ON-CHAIN", color: "var(--digital)",
+    items: ["Stablecoins & deposit tokens", "Tokenized money market funds", "Tokenized ETF share classes", "Digital bonds", "Tokenized structured notes", "Tokenized collateral"] },
+  { id: "chain", name: "Market infrastructure", tag: "RAILS WE HELP YOU SELECT, NEVER SELL", color: "var(--chain)",
+    items: ["Public & permissioned chains", "Issuance & tokenization platforms", "Transfer agents & fund admins", "Custody & wallets", "Oracles & NAV feeds", "Venues & market makers"] },
 ];
 
 (() => {
@@ -145,15 +145,15 @@ const LAYERS = [
     ${mover(coin, `M${xCash},${yBank} L${xCash},${yDig}`, 3.6, 4)}
     ${mover(token, `M${xAsset},${yDig} L${xAsset},${yBank}`, 3.6, 4)}
     ${mover(block, `M${CX},${yDig} L${CX},${yChain}`, 2.4, 3)}
-    <g class="flow-lbl"><text x="${xCash - 18}" y="${(yBank + yT0) / 2 + 2}" text-anchor="end" class="fl-h">CASH LEG ↓</text>
-      <text x="${xCash - 18}" y="${(yBank + yT0) / 2 + 18}" text-anchor="end" class="fl-s">stablecoins · deposit tokens</text></g>
-    <g class="flow-lbl"><text x="${xAsset + 18}" y="${(yT0 + yDig) / 2 + 26}" class="fl-h a">ASSET LEG ↑</text>
-      <text x="${xAsset + 18}" y="${(yT0 + yDig) / 2 + 42}" class="fl-s">tokenized fund units</text></g>`;
+    <g class="flow-lbl"><text x="${xCash - 18}" y="${(yBank + yT0) / 2 + 2}" text-anchor="end" class="fl-h">CASH IN ↓</text>
+      <text x="${xCash - 18}" y="${(yBank + yT0) / 2 + 18}" text-anchor="end" class="fl-s">subscriptions · reserves</text></g>
+    <g class="flow-lbl"><text x="${xAsset + 18}" y="${(yT0 + yDig) / 2 + 26}" class="fl-h a">TOKENS OUT ↑</text>
+      <text x="${xAsset + 18}" y="${(yT0 + yDig) / 2 + 42}" class="fl-s">stablecoins · fund shares</text></g>`;
 
   const H = TOP + 3 * GAP + B + T + 30;
   host.innerHTML = `<svg class="iso" viewBox="0 0 1220 ${H}" role="img" aria-labelledby="isoTitle isoDesc">
     <title id="isoTitle">T+0 solution architecture</title>
-    <desc id="isoDesc">Four stacked layers. Bank and institutional systems on top, T+0 orchestration in the middle, digital asset markets below, and blockchain infrastructure as the foundation. Cash flows down from the bank through T+0 into digital markets while tokenized assets flow back up, and both legs settle on-chain.</desc>
+    <desc id="isoDesc">Four stacked layers. The institutions T+0 advises on top, T+0 advisory with its three practices in the middle, on-chain products below, and market infrastructure as the foundation. Cash flows down from institutions through T+0 into on-chain products as subscriptions and reserves, tokens flow back up as stablecoins and fund shares, and every mint, transfer and burn settles on-chain.</desc>
     ${layersSvg}${flows}</svg>`;
 
   const svg = host.querySelector("svg");
